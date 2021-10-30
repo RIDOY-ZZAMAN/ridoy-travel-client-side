@@ -1,0 +1,20 @@
+.home{
+    height: 500px;
+    width: 100%;
+    background-image: url('../../images/banner3.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.servicesDiv{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.dropDown a{
+    text-decoration: none;
+    margin-left: 5px;
+    color: black;
+    
+}
