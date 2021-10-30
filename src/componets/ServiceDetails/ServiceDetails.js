@@ -76,14 +76,14 @@ const ServiceDetails = () => {
                             </div>
                         </div>
                         <div className="col-md-12 col-lg-5">
-                            <form onSubmit={handleAddBooking} className="bookservice">
+                            <form onSubmit={handleAddBooking} className="bookservice p-3">
                                 <h5>Your Name</h5>
-                                <input style={{ width: "360px" }} type="text" ref={nameRef} name="" id="" />  <br /><br />
+                                <input style={{ width: "100%" }} type="text" ref={nameRef} name="" id="" />  <br /><br />
                                 <h5>Your Email</h5>
-                                <input style={{ width: "360px" }} type="text" ref={emailRef} value={user?.email} name="" id="" /> <br /><br />
+                                <input style={{ width: "100%" }} type="text" ref={emailRef} value={user?.email} name="" id="" /> <br /><br />
                                 <h5>Service Name</h5>
-                                <input style={{ width: "360px" }} type="text" ref={serviceRef} value={singleService?.title} name="" id="" /> <br /><br />
-                                <input style={{ width: "360px" }} type="text" ref={statusRef} value="Pending" /> <br /> <br />
+                                <input style={{ width: "100%" }} type="text" ref={serviceRef} value={singleService?.title} name="" id="" /> <br /><br />
+                                <input style={{ width: "100%" }} type="text" ref={statusRef} value="Pending" /> <br /> <br />
 
                                 <input className="bg-success text-light p-2 mb-3 rounded fw-bold" type="submit" value="Book The Service" />
 

@@ -11,11 +11,14 @@ import img from '../../images/contact.JPG'
 
 const Home = () => {
     const [services, setServices] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         fetch('https://salty-shelf-34271.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
+        setLoading(false);
 
     }, [])
 
@@ -26,7 +29,7 @@ const Home = () => {
         <div className="container">
             <div className="row d-flex align-items-center p-3">
                 <div className="col-lg-5 col-md-12">
-                    <h2 className="text-start"><span className="text-danger ">Ridoy</span> Travel</h2>
+                    <h2 className="text-start"><span className="text-danger ">RIDOY</span> TRAVEL</h2>
                     <p style={{ textAlign: "justify" }}>Ridoy Travel is the best Teavel Agency at your area. We Ensure high services to our Customers</p>
 
                 </div>
@@ -35,12 +38,19 @@ const Home = () => {
 
                 </div>
             </div>
-            <h3 className="my-5">Our <span className="text-danger">Services</span> </h3>
+            <h3 className="my-5">OUR <span className="text-danger">SERVICES</span> </h3>
 
             <div className="row row-cols-1 row-cols-lg-3 g-4">
                 {
-                    services.map(service => <DisplayServices key={service._id} service={service}></DisplayServices>)
+                    loading ? <><div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div></> :
+
+                        services.map(service => <DisplayServices key={service._id} service={service}></DisplayServices>)
+
+
                 }
+
 
             </div>
             {/*----------------- extra section 1 start------------------- */}

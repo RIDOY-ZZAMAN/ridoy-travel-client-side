@@ -68,7 +68,7 @@ const ManageBookings = () => {
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Email Id</th>
-                            <th scope="col">Registering Date</th>
+                            <th scope="col">Service Name</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -77,7 +77,7 @@ const ManageBookings = () => {
                         <tr>
                             <th scope="row">{bk.name}</th>
                             <td>{bk.email}</td>
-                            <td>30-10-2021</td>
+                            <td>{bk.service}</td>
                             <td>{bk.status}</td>
                             <td ><button onClick={() => handleUpdate(bk._id)} className="bg-light d-flex justify-content-center p-1" type="button" style={{ width: "32px", height: "32px", borderRadius: "5px", }}> <img height="24px" width="32px" src={img} alt="" /> </button> <br />
 
