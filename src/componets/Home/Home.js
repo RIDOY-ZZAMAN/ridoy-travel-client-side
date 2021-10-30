@@ -11,14 +11,12 @@ import img from '../../images/contact.JPG'
 
 const Home = () => {
     const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     useEffect(() => {
-        setLoading(true);
+        // setLoading(true);
         fetch('https://salty-shelf-34271.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
-        setLoading(false);
+
 
     }, [])
 
@@ -42,9 +40,9 @@ const Home = () => {
 
             <div className="row row-cols-1 row-cols-lg-3 g-4">
                 {
-                    loading ? <><div className="spinner-border" role="status">
+                    services.length === 0 ? < div className="mx-auto"><div className="spinner-border" role="status">
                         <span className="visually-hidden">Loading...</span>
-                    </div></> :
+                    </div></div> :
 
                         services.map(service => <DisplayServices key={service._id} service={service}></DisplayServices>)
 
